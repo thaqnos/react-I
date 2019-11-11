@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -19,4 +23,29 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.bton, 
+.bton-reset {
+  padding: 5px 20px;
+  width: 60px;
+  margin-right: 10px;
+  border: none;
+  background-color: #09d3ac;
+  cursor: pointer;
+}
+
+.bton-reset {
+  margin-top: 20px;
+  background-color: green;
+  width: 100px;
+
+}
+
+.numero {
+  background-color: rgb(202, 199, 199);
+  padding: 10px 20px;
+  width: 90px;
+  text-align: center;
+  border-radius: 5px;
 }
