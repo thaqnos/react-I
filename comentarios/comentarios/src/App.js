@@ -1,22 +1,9 @@
 import React from 'react';
+import CriaComentarios from './componentes/CriaComentarios';
 import logo from './logo.svg';
-import Doggo_um from './img/doggo.jpg'
-import Doggo_dois from './img/doggo_2.jpg'
+import Doggo_um from './img/doggo.jpg';
+import Doggo_dois from './img/doggo_2.jpg';
 import './App.css';
-
-const CriaComentarios = props => {
-  return (
-    <div className="comentario">
-      <img className="comentario__perfil" src={props.imagem}/>
-      <div>
-        <h2 className="comentario__nome">{props.nome}</h2>
-        <h3 class="comentario__subtitulo">{props.subtitulo}</h3>
-        <hr/>
-        <p>{props.comentario}</p>
-      </div>
-    </div>
-  )
-}
 
 function App() {
   return (
