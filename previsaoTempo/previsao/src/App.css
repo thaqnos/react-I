@@ -31,6 +31,10 @@
   width: auto;
 }
 
+.previsao__icon{
+  font-size: 100px;
+}
+
 .previsao-temperatura {
   width: 100%;
   margin-top: 15px;

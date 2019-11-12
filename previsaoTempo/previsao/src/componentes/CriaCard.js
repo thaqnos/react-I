@@ -1,14 +1,13 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faCloud } from '@fortawesome/free-solid-svg-icons'
 
 const CriaCard = props => {
     return(
         <div className="previsao">
             <h1 className="previsao__data">{props.titulo}</h1>
             <p className="previsao__resumo">{props.subtitulo}</p>
-            <img className="previsao__img" src={props.imagem} alt={props.alt}/>
-            {/* <FontAwesomeIcon icon={faSun} /> */}
+            {/* <img className="previsao__img" src={props.imagem} alt={props.alt}/> */}
+            <FontAwesomeIcon className="previsao__icon" icon={props.icone} />
             <table className="previsao-temperatura">
                 <tr className="previsao-temperatura__linha">
                     <th>Máxima</th>
