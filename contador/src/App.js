@@ -69,7 +69,7 @@ class Contador extends React.Component {
             <button className="btnMaisUm" onClick={this.adicionarUm} disabled={this.state.disabled}>+1</button>
             <button className="btnMenosUm" onClick={this.menosUm} disabled={this.state.disabled}>-1</button>
             <button className="btnResetar" onClick={this.resetar} disabled={this.state.disabled}>resetar</button><br/>
-            <button className="btndisabled" onClick={this.disabled}>Finaliza Contador</button>
+            <button className="btndisabled" onClick={this.disabled}>{this.state.disabled === true ? "descongela os botão" : "congela os botão"}</button>
           </div>
         )}
       </div>
