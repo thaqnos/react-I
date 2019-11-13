@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';   
 
 class Contador extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       contador: 0,
-      mostrar: true
+      mostrar: true,
+      disabled: false
       // Aqui ficam os estados
     }
   }
@@ -47,6 +48,14 @@ class Contador extends React.Component {
     })
   }
 
+  disabled = () => {
+    this.setState((prevState) => {
+      return {
+        disabled: !prevState.disabled
+      }
+    })
+  }
+
   render() {
     return (
       <div>
@@ -57,9 +66,10 @@ class Contador extends React.Component {
         {/* Aqui eu faço a condição sempre usando >THIS< */}
         {this.state.mostrar === true? '' :(
           <div>
-            <button className="btnMaisUm" onClick={this.adicionarUm}>+1</button>
-            <button className="btnMenosUm" onClick={this.menosUm}>-1</button>
-            <button className="btnResetar" onClick={this.resetar}>resetar</button>
+            <button className="btnMaisUm" onClick={this.adicionarUm} disabled={this.state.disabled}>+1</button>
+            <button className="btnMenosUm" onClick={this.menosUm} disabled={this.state.disabled}>-1</button>
+            <button className="btnResetar" onClick={this.resetar} disabled={this.state.disabled}>resetar</button><br/>
+            <button className="btndisabled" onClick={this.disabled}>Finaliza Contador</button>
           </div>
         )}
       </div>
