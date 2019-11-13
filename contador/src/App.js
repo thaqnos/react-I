@@ -61,15 +61,17 @@ class Contador extends React.Component {
       <div>
         <p>{this.state.contador}</p>
         <button onClick={this.fecharContador}>
-          {this.state.mostrar === true ? "Bota os botão" : "Tira os botão"}
+          {this.state.mostrar === true ? "Tira os botão" : "Bota os botão"}
           </button><br/>
         {/* Aqui eu faço a condição sempre usando >THIS< */}
-        {this.state.mostrar === true? '' :(
+        {this.state.mostrar === true && (
           <div>
             <button className="btnMaisUm" onClick={this.adicionarUm} disabled={this.state.disabled}>+1</button>
             <button className="btnMenosUm" onClick={this.menosUm} disabled={this.state.disabled}>-1</button>
             <button className="btnResetar" onClick={this.resetar} disabled={this.state.disabled}>resetar</button><br/>
-            <button className="btndisabled" onClick={this.disabled}>{this.state.disabled === true ? "descongela os botão" : "congela os botão"}</button>
+            {this.state.contador !== 0? (
+              <button className="btndisabled" onClick={this.disabled}>Congelar</button>
+            ) : ''}
           </div>
         )}
       </div>
