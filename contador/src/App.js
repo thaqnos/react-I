@@ -31,7 +31,9 @@ class Contador extends React.Component {
   resetar = () =>{
     this.setState(() => {
       return {
-        contador: 0
+        contador: 0,
+        disabled: false
+
       }
     })
   }
@@ -68,10 +70,10 @@ class Contador extends React.Component {
           <div>
             <button className="btnMaisUm" onClick={this.adicionarUm} disabled={this.state.disabled}>+1</button>
             <button className="btnMenosUm" onClick={this.menosUm} disabled={this.state.disabled}>-1</button>
-            <button className="btnResetar" onClick={this.resetar} disabled={this.state.disabled}>resetar</button><br/>
-            {this.state.contador !== 0? (
+            <button className="btnResetar" onClick={this.resetar}>resetar</button><br/>
+            {this.state.contador !== 0 && (
               <button className="btndisabled" onClick={this.disabled}>Congelar</button>
-            ) : ''}
+            )}
           </div>
         )}
       </div>
